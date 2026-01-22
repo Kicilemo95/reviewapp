@@ -2,7 +2,7 @@
 This module is responsible for visualising the data using Matplotlib.
 Any visualisations should be generated via functions in this module.
 """
-import matplotlib.pyplot as plt
+
 
 
 def pie_chart(data):
