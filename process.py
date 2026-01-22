@@ -66,8 +66,13 @@ def monthly_average_by_park(data, park):
 
     for r in data:
         if r["Branch"].lower() == park.lower():
-            month = r["Year_Month"].split("-")[1]
-            months[month].append(r["Rating"])
+            date = r["Year_Month"]
+
+            if "-" in date:
+                parts = date.split("-")
+                if len(parts) == 2:
+                    month = parts[1]
+                    months[month].append(r["Rating"])
 
     return {
         m: sum(scores) / len(scores)
